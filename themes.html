@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waleed Anwar | Portfolio Themes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #fff; margin: 0; min-height: 100vh; }
+        .theme-card { border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; overflow: hidden; transition: all 0.4s; background: rgba(255,255,255,0.03); }
+        .theme-card:hover { border-color: rgba(255,255,255,0.3); transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .theme-preview { height: 160px; position: relative; overflow: hidden; }
+        .theme-card:hover .theme-preview { filter: brightness(1.1); }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen py-12 px-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-4">
+                <a href="index.html" class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors mb-8" style="text-decoration:none">
+                    <i class="fa-solid fa-arrow-left"></i> Torna al Portfolio
+                </a>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-3 tracking-tight">Portfolio <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Themes</span></h1>
+                <p class="text-slate-400 text-lg">Scegli il tema che preferisci — Ogni tema è un'esperienza unica</p>
+            </div>
+            <!-- Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-12">
+                <!-- Default -->
+                <a href="index.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#0f172a,#1e293b)">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full border border-cyan-500/30 flex items-center justify-center"><i class="fa-solid fa-server text-2xl text-cyan-400"></i></div>
+                        </div>
+                        <div class="absolute top-3 right-3 px-2 py-1 bg-cyan-500/20 text-cyan-400 text-[10px] font-bold rounded">DEFAULT</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🌐 Default Premium</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Glassmorphism, GSAP animations, dynamic island navbar</p>
+                    </div>
+                </a>
+                <!-- 90s -->
+                <a href="theme-90s.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#1a0033,#330066)">
+                        <div class="absolute inset-0 flex items-center justify-center"><span class="text-5xl" style="text-shadow:0 0 20px #ff00ff,0 0 60px #ff00ff;color:#ff00ff;font-weight:900">90s</span></div>
+                        <div class="absolute bottom-0 left-0 right-0 h-12" style="background:linear-gradient(0deg,#1a0033,transparent)"></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🕹️ 90s Synthwave</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Neon grid, VHS scanlines, pixel font, retro sun</p>
+                    </div>
+                </a>
+                <!-- Cyberpunk -->
+                <a href="theme-cyber.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#0a0a0f,#111118)">
+                        <div class="absolute inset-0 flex items-center justify-center"><span class="text-3xl font-black" style="color:#fcee0a;text-shadow:0 0 15px #fcee0a">CYBER</span></div>
+                        <div class="absolute top-0 left-0 right-0 h-[2px] bg-[#ff003c] opacity-50"></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">⚡ Cyberpunk</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Glitch effects, angular clip-paths, neon accents</p>
+                    </div>
+                </a>
+                <!-- Linux -->
+                <a href="theme-linux.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:#000">
+                        <div class="absolute inset-0 flex items-center justify-center font-mono text-xs text-green-400 p-4 leading-relaxed" style="font-family:monospace">waleed@portfolio:~$ ls<br>profile/ skills/ xp/<br>edu/ projects/ _</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🐧 Linux Terminal</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">CRT overlay, bash commands, monospace, cursor blink</p>
+                    </div>
+                </a>
+                <!-- Minimal Zen -->
+                <a href="theme-minimal.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#f5f0e8,#e8e0d0)">
+                        <div class="absolute inset-0 flex items-center justify-center"><span class="text-3xl text-[#1a1a1a]" style="font-family:serif;font-style:italic">Minimal</span></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🍵 Minimal Zen</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Serif elegante, toni terra, whitespace, essenziale</p>
+                    </div>
+                </a>
+                <!-- Vaporwave -->
+                <a href="theme-vapor.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#2d1b69,#0d0221)">
+                        <div class="absolute inset-0 flex items-center justify-center"><span class="text-2xl font-bold" style="color:#ff71ce;text-shadow:0 0 20px #b967ff">Ｖａｐｏｒ</span></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🌴 Vaporwave</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Pastel neon, fullwidth text, stelle, aesthetic vibes</p>
+                    </div>
+                </a>
+                <!-- Brutalist -->
+                <a href="theme-brutalist.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:#f5f5f0">
+                        <div class="absolute inset-0 flex items-center justify-center"><span class="text-4xl font-black text-black tracking-tighter" style="font-family:'Syne',sans-serif">BRUT.</span></div>
+                        <div class="absolute bottom-0 left-0 w-16 h-1.5 bg-red-600"></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🏗️ Brutalist</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Tipografia gigante, bordi netti, rosso + marquee scroll</p>
+                    </div>
+                </a>
+                <!-- Ocean -->
+                <a href="theme-ocean.html" style="text-decoration:none;color:white" class="theme-card group">
+                    <div class="theme-preview" style="background:linear-gradient(135deg,#060d1f,#0f3460)">
+                        <div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid fa-water text-4xl" style="color:#00d2ff;filter:drop-shadow(0 0 15px rgba(0,210,255,0.8))"></i></div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base mb-1">🌊 Deep Ocean</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Bolle animate, onde SVG, effetti bioluminescenti</p>
+                    </div>
+                </a>
+            </div>
+            <p class="text-center text-slate-500 text-xs mt-12">&copy; 2026 Waleed Anwar — Tutti i temi includono tutte le sezioni e light/dark mode</p>
+        </div>
+    </div>
+</body>
+</html>
