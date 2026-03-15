@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waleed Anwar | Cyberpunk Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root { --yellow: #fcee0a; --pink: #ff003c; --teal: #00ffcc; --bg: #0a0a0f; }
+        * { box-sizing: border-box; }
+        body { font-family: 'Rajdhani', sans-serif; background: var(--bg); color: #e0e0e0; margin: 0; overflow-x: hidden; }
+        body.light { --bg: #f0f0f0; background: var(--bg); color: #0a0a0f; }
+        body.light .text-glow { text-shadow: none; }
+        body.light .cyber-card { background: #fff; border-color: #0a0a0f; color: #0a0a0f; box-shadow: 4px 4px 0 #0a0a0f; }
+        body.light .cyber-card h3, body.light .cyber-card h4, body.light .cyber-card h5 { color: #0a0a0f; }
+        body.light .cyber-card p, body.light .cyber-card li, body.light .cyber-card span:not(.cyber-tag) { color: #333; }
+        body.light nav { background: rgba(240,240,240,0.95); border-color: #0a0a0f; }
+        body.light nav a, body.light nav button, body.light nav span { color: #0a0a0f; }
+        body.light .cyber-tag { background: #0a0a0f; color: var(--yellow); }
+        body.light footer { background: #e0e0e0; color: #0a0a0f; }
+        body.light .glitch-line { display: none; }
+        body.light .cyber-grid { opacity: 0.08; }
+        body.light .lang-chip { background: #fff; border-color: #0a0a0f; color: #0a0a0f; }
+        .text-glow { text-shadow: 0 0 10px var(--yellow), 0 0 30px var(--yellow); }
+        .mono { font-family: 'Share Tech Mono', monospace; }
+        .cyber-grid { position: fixed; inset: 0; pointer-events: none; z-index: 0; background-size: 40px 40px; background-image: linear-gradient(to right, rgba(0,255,204,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,255,204,0.06) 1px, transparent 1px); }
+        .cyber-card { background: rgba(10,10,15,0.9); border: 2px solid var(--teal); padding: 1.5rem; position: relative; clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px)); transition: all 0.3s; }
+        .cyber-card:hover { border-color: var(--yellow); box-shadow: 0 0 20px rgba(252,238,10,0.3); transform: translateY(-4px); }
+        .cyber-tag { display: inline-block; padding: 2px 10px; background: var(--teal); color: #0a0a0f; font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; }
+        .lang-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border: 1px solid var(--teal); font-size: 0.8rem; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(10,10,15,0.95); border-bottom: 2px solid var(--teal); display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 2rem; backdrop-filter: blur(10px); }
+        .glitch-line { position: fixed; width: 100%; height: 2px; background: var(--pink); opacity: 0.5; pointer-events: none; z-index: 9999; animation: glitchMove 8s linear infinite; }
+        @keyframes glitchMove { 0%{top:-2px} 100%{top:100vh} }
+        .progress-cyber { height: 10px; background: #111; border: 1px solid var(--teal); }
+        .progress-cyber .fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--yellow)); position: relative; }
+        .progress-cyber .fill::after { content: ''; position: absolute; right: 0; top: -3px; width: 2px; height: calc(100% + 6px); background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+        section { position: relative; z-index: 1; }
+    </style>
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="glitch-line"></div>
+    <nav>
+        <a href="themes.html" class="mono text-sm text-[#00ffcc] hover:text-[#fcee0a] transition-colors"><i class="fa-solid fa-arrow-left mr-2"></i>[THEMES]</a>
+        <div class="flex gap-5 items-center text-sm font-bold tracking-wider">
+            <a href="#profile" class="hover:text-[#fcee0a] transition-colors hidden md:inline">PROFILE</a>
+            <a href="#skills" class="hover:text-[#fcee0a] transition-colors hidden md:inline">SKILLS</a>
+            <a href="#xp" class="hover:text-[#fcee0a] transition-colors hidden md:inline">EXP</a>
+            <a href="#education" class="hover:text-[#fcee0a] transition-colors hidden md:inline">EDU</a>
+            <a href="#projects" class="hover:text-[#fcee0a] transition-colors hidden md:inline">PROJECTS</a>
+            <span class="text-[#333] hidden md:inline">|</span>
+            <button onclick="document.body.classList.toggle('light')" class="w-8 h-8 border-2 border-[#fcee0a] bg-transparent hover:bg-[#fcee0a] hover:text-[#0a0a0f] transition-all flex items-center justify-center text-xs"><i class="fa-solid fa-sun"></i></button>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center px-4 pt-20">
+        <div class="max-w-6xl mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="mono text-xs text-[#00ffcc] mb-4 tracking-widest">&lt;INITIALIZING PROFILE... /&gt;</div>
+                <h1 class="text-6xl md:text-8xl font-black leading-none mb-2">
+                    <span class="text-glow" style="color: var(--yellow);">WALEED</span><br>
+                    <span style="color: var(--pink);">ANWAR</span>
+                </h1>
+                <div class="h-[2px] w-32 bg-gradient-to-r from-[#00ffcc] to-[#fcee0a] my-6"></div>
+                <p class="text-xl tracking-widest mb-4 font-bold" style="color: var(--teal);">SYS_ADMIN // DEV // ENGINEER</p>
+                <p class="text-sm opacity-70 max-w-md leading-relaxed mb-8">Appassionato di problem-solving e apprendimento rapido. Fortemente motivato a crescere professionalmente e contribuire alla gestione e sicurezza dei sistemi informativi aziendali.</p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#projects" class="px-6 py-3 bg-[#fcee0a] text-[#0a0a0f] font-black text-sm hover:bg-[#ff003c] hover:text-white transition-all" style="clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));">PROJECTS →</a>
+                    <a href="https://www.linkedin.com/in/waleedanwar06" target="_blank" class="px-6 py-3 border-2 border-[#00ffcc] text-[#00ffcc] font-black text-sm hover:bg-[#00ffcc] hover:text-[#0a0a0f] transition-all">LINKEDIN</a>
+                </div>
+            </div>
+            <div class="hidden md:flex justify-center">
+                <div class="relative w-72 h-72">
+                    <div class="absolute inset-0 border-2 border-[#00ffcc] rotate-45 animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute inset-8 border-2 border-[#fcee0a] rotate-12 animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid fa-microchip text-7xl" style="color: var(--yellow); filter: drop-shadow(0 0 20px rgba(252,238,10,0.8));"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROFILE -->
+    <section id="profile" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-2"><span style="color:var(--yellow)">01.</span> PROFILE</h2>
+            <div class="h-[2px] w-20 bg-[#00ffcc] mb-10"></div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cyber-card"><h3 class="font-bold text-lg mb-2" style="color:var(--teal)"><i class="fa-solid fa-terminal mr-2"></i>BACKGROUND</h3><p class="text-sm leading-relaxed">Sono uno studente di <strong>Ingegneria Informatica</strong> al Politecnico di Milano, con un diploma in Sistemi Informativi Aziendali (SIA). Attualmente sto arricchendo il mio percorso con una specializzazione come <strong style="color:var(--teal)">System Administrator</strong> presso Galdus.</p></div>
+                <div class="cyber-card"><h3 class="font-bold text-lg mb-2" style="color:var(--yellow)"><i class="fa-solid fa-bolt mr-2"></i>COMPETENZE & APPROCCIO</h3><p class="text-sm leading-relaxed">Possiedo solide basi nei fondamenti di reti, sicurezza informatica e gestione di database. Spiccata attitudine al <strong style="color:var(--yellow)">problem-solving, al troubleshooting e all'apprendimento rapido</strong>, fortemente motivato a contribuire alla sicurezza dei sistemi informativi.</p></div>
+                <div class="cyber-card"><h3 class="font-bold text-lg mb-2" style="color:var(--pink)"><i class="fa-solid fa-rocket mr-2"></i>OBIETTIVI ATTUALI</h3><p class="text-sm leading-relaxed">Parallelamente alla certificazione <strong style="color:var(--yellow)"><i class="fa-brands fa-aws mr-1"></i>AWS Cloud Practitioner</strong> in corso, <strong>sto cercando attivamente un'opportunità di stage</strong> per completare il mio percorso di specializzazione presso Galdus.</p></div>
+                <div class="cyber-card"><h3 class="font-bold text-lg mb-2" style="color:var(--teal)"><i class="fa-solid fa-compass mr-2"></i>VISIONE & FUTURO</h3><p class="text-sm leading-relaxed">Evolvere verso ambiti come <strong style="color:var(--pink)">Cloud, DevOps e Cybersecurity</strong>. Aspiro a diventare un professionista tecnico completo, capace di progettare, gestire e proteggere infrastrutture IT moderne e resilienti.</p></div>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <span class="lang-chip"><i class="fa-solid fa-language" style="color:var(--teal)"></i> Italiano <span class="opacity-50">Fluente</span></span>
+                <span class="lang-chip"><i class="fa-solid fa-language" style="color:var(--teal)"></i> Inglese <span class="opacity-50">B2</span></span>
+                <span class="lang-chip"><i class="fa-solid fa-language" style="color:var(--teal)"></i> Urdu <span class="opacity-50">Madrelingua</span></span>
+                <span class="lang-chip"><i class="fa-solid fa-language" style="color:var(--teal)"></i> Francese <span class="opacity-50">Base</span></span>
+            </div>
+        </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-2"><span style="color:var(--yellow)">02.</span> SKILLS</h2>
+            <div class="h-[2px] w-20 bg-[#ff003c] mb-10"></div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cyber-card">
+                    <h3 class="font-bold text-lg mb-6" style="color:var(--teal)">DEV_STACK</h3>
+                    <div class="space-y-5">
+                        <div><div class="flex justify-between mono text-xs mb-1"><span>C++</span><span style="color:var(--yellow)">80%</span></div><div class="progress-cyber"><div class="fill" style="width:80%"></div></div></div>
+                        <div><div class="flex justify-between mono text-xs mb-1"><span>VISUAL_BASIC</span><span style="color:var(--yellow)">85%</span></div><div class="progress-cyber"><div class="fill" style="width:85%"></div></div></div>
+                        <div><div class="flex justify-between mono text-xs mb-1"><span>HTML_CSS</span><span style="color:var(--yellow)">70%</span></div><div class="progress-cyber"><div class="fill" style="width:70%"></div></div></div>
+                        <div><div class="flex justify-between mono text-xs mb-1"><span>PYTHON <span class="cyber-tag ml-1" style="font-size:0.55rem">IN_PROGRESS</span></span><span style="color:var(--yellow)">30%</span></div><div class="progress-cyber"><div class="fill" style="width:30%"></div></div></div>
+                    </div>
+                </div>
+                <div class="cyber-card">
+                    <h3 class="font-bold text-lg mb-6" style="color:var(--pink)">SYS_INFRA</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-database text-[#00ffcc] text-xl mt-1"></i><div><h4 class="font-bold text-sm">Microsoft SQL Server</h4><p class="mono text-[10px] opacity-60">Basi di progettazione e gestione database.</p></div></div>
+                        <div class="flex items-start gap-3"><i class="fa-brands fa-aws text-[#fcee0a] text-xl mt-1"></i><div><h4 class="font-bold text-sm">AWS Cloud</h4><p class="mono text-[10px] opacity-60">Certificazione Cloud Practitioner in corso.</p></div></div>
+                        <div class="flex items-start gap-3"><i class="fa-solid fa-network-wired text-[#00ffcc] text-xl mt-1"></i><div><h4 class="font-bold text-sm">Reti & Sicurezza</h4><p class="mono text-[10px] opacity-60">Basi solide di networking e sicurezza.</p></div></div>
+                        <div class="flex items-start gap-3"><i class="fa-brands fa-microsoft text-[#ff003c] text-xl mt-1"></i><div><h4 class="font-bold text-sm">Suite Office</h4><p class="mono text-[10px] opacity-60">Competenza avanzata in Excel, Word e PPT.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- EXPERIENCE -->
+    <section id="xp" class="py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-2"><span style="color:var(--yellow)">03.</span> EXPERIENCE</h2>
+            <div class="h-[2px] w-20 bg-[#fcee0a] mb-10"></div>
+            <div class="cyber-card border-l-4" style="border-left-color: var(--yellow);">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
+                    <div><h3 class="text-xl font-black">Stage Amministrativo e IT</h3><p class="text-sm mt-1" style="color:var(--teal)"><i class="fa-regular fa-building mr-1"></i> Italdibipack S.P.A</p></div>
+                    <span class="cyber-tag">OTT-NOV 2023</span>
+                </div>
+                <ul class="space-y-2 text-sm">
+                    <li><span style="color:var(--pink)" class="mr-2">►</span>Supporto operativo alle attività amministrative e contabili.</li>
+                    <li><span style="color:var(--pink)" class="mr-2">►</span>Gestione di estratti conto bancari, fatture e documenti di trasporto.</li>
+                    <li><span style="color:var(--pink)" class="mr-2">►</span>Utilizzo della <strong style="color:var(--teal)">piattaforma dell'Agenzia delle Dogane</strong>.</li>
+                    <li><span style="color:var(--pink)" class="mr-2">►</span>Operatività su sistemi aziendali tramite il gestionale <strong style="color:var(--teal)">AS400</strong>, consolidando attenzione ai dettagli.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- EDUCATION -->
+    <section id="education" class="py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-2"><span style="color:var(--yellow)">04.</span> EDUCATION</h2>
+            <div class="h-[2px] w-20 bg-[#00ffcc] mb-10"></div>
+            <div class="space-y-6">
+                <div class="cyber-card border-l-4" style="border-left-color:var(--teal)">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-2">
+                        <div><h3 class="text-xl font-black">Ingegneria Informatica</h3><h5 class="text-sm mt-1 opacity-70"><i class="fa-solid fa-building-columns mr-1"></i> Politecnico di Milano</h5></div>
+                        <span class="cyber-tag">2025-2028</span>
+                    </div>
+                </div>
+                <div class="cyber-card border-l-4" style="border-left-color:var(--yellow)">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-2">
+                        <div><h3 class="text-xl font-black">System Administrator</h3><h5 class="text-sm mt-1 opacity-70"><i class="fa-solid fa-laptop-code mr-1"></i> Galdus Formazione</h5></div>
+                        <span class="cyber-tag">2025-2026</span>
+                    </div>
+                </div>
+                <div class="cyber-card border-l-4" style="border-left-color:var(--pink)">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-2">
+                        <div><h3 class="text-xl font-black">Diploma SIA</h3><h5 class="text-sm mt-1 opacity-70"><i class="fa-solid fa-book mr-1"></i> ITET Maggiolini</h5></div>
+                        <span class="cyber-tag">2020-2025</span>
+                    </div>
+                    <p class="text-sm opacity-70 mt-3 leading-relaxed">Studio approfondito di economia aziendale, sistemi informativi, linguaggi di programmazione (VB), gestione database (MS SQL), reti e sicurezza informatica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-black mb-2"><span style="color:var(--yellow)">05.</span> PROJECTS</h2>
+            <div class="h-[2px] w-20 bg-[#00ffcc] mb-10"></div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="cyber-card">
+                    <div class="flex justify-between items-start mb-4"><i class="fa-solid fa-cart-shopping text-3xl" style="color:var(--yellow)"></i><span class="cyber-tag">WEB</span></div>
+                    <h3 class="text-xl font-black mb-2">Sito E-commerce</h3>
+                    <p class="text-sm opacity-70 mb-4">Sviluppo di un ambiente web funzionale e dinamico. Il progetto ha previsto la connessione tra interfaccia utente e database per la gestione dei dati, realizzato in HTML, CSS e Visual Basic tramite Visual Studio, integrato con <strong style="color:var(--teal)">Microsoft SQL Server 2018</strong>.</p>
+                    <div class="flex flex-wrap gap-2"><span class="cyber-tag">HTML/CSS</span><span class="cyber-tag">VB</span><span class="cyber-tag">MS SQL</span></div>
+                </div>
+                <div class="cyber-card">
+                    <div class="flex justify-between items-start mb-4"><i class="fa-solid fa-table-tennis-paddle-ball text-3xl" style="color:var(--teal)"></i><span class="cyber-tag">WEB</span></div>
+                    <h3 class="text-xl font-black mb-2">Sito dedicato al Tennis</h3>
+                    <p class="text-sm opacity-70 mb-4">Progettazione di una piattaforma web integrata. Realizzata in Visual Studio combinando UI front-end in HTML/CSS e logica di gestione in Visual Basic, interfacciata direttamente con <strong style="color:var(--teal)">Microsoft SQL Server 2018</strong> per l'archiviazione dati.</p>
+                    <div class="flex flex-wrap gap-2"><span class="cyber-tag">HTML/CSS</span><span class="cyber-tag">VB</span><span class="cyber-tag">MS SQL</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="py-12 px-4 text-center border-t-2 border-[#00ffcc] relative z-10" style="background: rgba(10,10,15,0.98);">
+        <p class="mono text-xs mb-4" style="color:var(--teal)">// ESTABLISH CONNECTION //</p>
+        <div class="flex justify-center gap-4 mb-6">
+            <a href="mailto:Waleedanwar039@gmail.com" class="w-10 h-10 border-2 border-[#fcee0a] flex items-center justify-center hover:bg-[#fcee0a] hover:text-[#0a0a0f] transition-all"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/waleedanwar06" target="_blank" class="w-10 h-10 border-2 border-[#00ffcc] flex items-center justify-center hover:bg-[#00ffcc] hover:text-[#0a0a0f] transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="w-10 h-10 border-2 border-[#ff003c] flex items-center justify-center hover:bg-[#ff003c] transition-all"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="inline-flex flex-col sm:flex-row items-center gap-4 mb-6 text-sm" style="border:1px solid var(--teal); padding:0.8rem 1.5rem;">
+            <span class="mono text-xs"><i class="fa-solid fa-phone mr-2" style="color:var(--teal)"></i>+39 351 106 3920</span>
+            <span class="hidden sm:inline opacity-30">|</span>
+            <span class="mono text-xs"><i class="fa-solid fa-location-dot mr-2" style="color:var(--teal)"></i>Nerviano 20014, Milano</span>
+        </div>
+        <p class="mono text-[10px] opacity-40">&copy; 2026 WALEED.ANWAR // SYS.STATUS: ONLINE</p>
+    </footer>
+</body>
+</html>
