@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Waleed Anwar | System Administrator & Developer</title>
+    
+    <meta property="og:title" content="Waleed Anwar | System Administrator & Developer">
+    <meta property="og:description" content="Studente di Ingegneria Informatica e System Administrator. Appassionato di IT, problem-solving e gestione dei sistemi aziendali.">
+    <meta property="og:image" content="https://TUO_DOMINIO_QUI/preview-image.jpg"> 
+    <meta property="og:url" content="https://TUO_DOMINIO_QUI">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-it antialiased selection:bg-cyan-500 selection:text-white no-scroll relative">
+    <div id="cursor-glow"></div>
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute inset-[-50%] bg-grid"></div>
+    </div>
+    
+    <div id="hero-bg-1" class="hero-bg-blur fixed top-[-10%] left-[-10%] w-[50rem] h-[50rem] bg-blue-600/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none z-[-1]"></div>
+    <div id="hero-bg-2" class="hero-bg-blur fixed bottom-[-10%] right-[-10%] w-[50rem] h-[50rem] bg-cyan-600/10 rounded-full blur-[100px] md:blur-[150px] pointer-events-none z-[-1]"></div>
+    <div id="loader">
+        <div class="w-72 md:w-80 max-w-[85vw]">
+            <div class="flex justify-between items-end mb-3 font-mono text-cyan-400 text-xs md:text-sm">
+                <span class="tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-terminal animate-pulse"></i> SYS.BOOTING...
+                </span>
+                <span id="loader-percent" class="font-bold text-white">0%</span>
+            </div>
+            <div class="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden relative border border-slate-700">
+                <div id="loader-bar" class="h-full bg-gradient-to-r from-blue-600 via-cyan-400 to-emerald-400 w-0 relative shadow-[0_0_20px_#06b6d4]"></div>
+            </div>
+        </div>
+    </div>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 flex justify-center pt-4 md:pt-6 px-4 hidden-on-load opacity-0 -translate-y-10">
+        <div id="nav-container" class="flex items-center justify-between w-full max-w-7xl px-4 md:px-6 py-3 md:py-4 bg-transparent border border-transparent rounded-2xl">
+            
+            <a href="#" class="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-3 group">
+                <div class="w-9 h-9 md:w-10 md:h-10 shrink-0 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] md:group-hover:rotate-12 transition-all duration-300">
+                    <span class="text-base md:text-lg font-black text-white keep-white">W</span>
+                </div>
+                <div class="island-collapse flex items-center">
+                    <span>Waleed <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Anwar</span></span>
+                </div>
+            </a>
+            
+            <div id="nav-links" class="hidden md:flex gap-8 text-sm font-medium text-slate-300 items-center transition-all duration-700 cubic-bezier(0.16, 1, 0.3, 1)">
+                <a href="#profile" class="hover:text-cyan-400 transition-colors relative group py-1">
+                    <span class="lang-it">Profilo</span><span class="lang-en">Profile</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors relative group py-1">
+                    <span class="lang-it">Competenze</span><span class="lang-en">Skills</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors relative group py-1">
+                    <span class="lang-it">Esperienza</span><span class="lang-en">Experience</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors relative group py-1">
+                    <span class="lang-it">Formazione</span><span class="lang-en">Education</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors relative group py-1">
+                    <span class="lang-it">Progetti</span><span class="lang-en">Projects</span>
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            <div class="flex items-center gap-2 md:gap-3">
+                <a href="themes.html" title="Custom Themes" class="w-9 h-9 md:w-10 md:h-10 shrink-0 rounded-full border border-slate-700 bg-slate-800/80 text-sm text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all focus:outline-none flex items-center justify-center group">
+                    <i class="fa-solid fa-palette md:group-hover:rotate-12 transition-transform duration-500"></i>
+                </a>
+                <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 shrink-0 rounded-full border border-slate-700 bg-slate-800/80 text-sm text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all focus:outline-none flex items-center justify-center group">
+                    <i class="fa-solid fa-sun md:group-hover:rotate-45 transition-transform duration-500 dark-icon"></i>
+                    <i class="fa-solid fa-moon md:group-hover:-rotate-12 transition-transform duration-500 light-icon hidden"></i>
+                </button>
+                <button id="lang-toggle" class="w-9 h-9 md:w-10 md:h-10 shrink-0 rounded-full border border-slate-700 bg-slate-800/80 text-xs font-mono font-bold text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 transition-all focus:outline-none flex items-center justify-center group">
+                    <span class="lang-it md:group-hover:-rotate-90 transition-transform duration-500">IT</span>
+                    <span class="lang-en md:group-hover:-rotate-90 transition-transform duration-500">EN</span>
+                </button>
+                
+                <div class="island-collapse hidden md:flex">
+                    <a href="mailto:Waleedanwar039@gmail.com" class="px-5 md:px-6 py-2 bg-gradient-to-r from-slate-100 to-slate-300 text-slate-900 hover:from-white hover:to-white rounded-full text-sm font-bold transition-all shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-0.5 whitespace-nowrap flex items-center">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> 
+                        <span class="lang-it">Contattami</span><span class="lang-en">Contact Me</span>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden w-9 h-9 shrink-0 flex items-center justify-center rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:text-cyan-400 text-base focus:outline-none z-50 relative transition-all">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen z-40 bg-slate-900/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-6 text-xl font-bold">
+        <a href="#profile" class="mobile-link text-slate-300 hover:text-cyan-400 transition-colors"><span class="lang-it">Profilo</span><span class="lang-en">Profile</span></a>
+        <a href="#skills" class="mobile-link text-slate-300 hover:text-cyan-400 transition-colors"><span class="lang-it">Competenze</span><span class="lang-en">Skills</span></a>
+        <a href="#experience" class="mobile-link text-slate-300 hover:text-cyan-400 transition-colors"><span class="lang-it">Esperienza</span><span class="lang-en">Experience</span></a>
+        <a href="#education" class="mobile-link text-slate-300 hover:text-cyan-400 transition-colors"><span class="lang-it">Formazione</span><span class="lang-en">Education</span></a>
+        <a href="#projects" class="mobile-link text-slate-300 hover:text-cyan-400 transition-colors"><span class="lang-it">Progetti</span><span class="lang-en">Projects</span></a>
+        <a href="themes.html" class="mobile-link text-cyan-400 hover:text-cyan-300 transition-colors"><i class="fa-solid fa-palette mr-2"></i> <span class="lang-it">Temi / Themes</span></a>
+        <a href="mailto:Waleedanwar039@gmail.com" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white keep-white rounded-full mt-6 text-lg shadow-lg"><span class="lang-it">Contattami</span><span class="lang-en">Contact Me</span></a>
+    </div>
+    <main class="w-full max-w-full overflow-hidden relative">
+        <section class="min-h-screen flex items-center pt-24 pb-12 md:py-24 px-4 relative z-10">
+            <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div>
+                    <div class="hero-elem opacity-0 translate-y-10 inline-flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-[10px] md:text-xs font-bold mb-6 md:mb-8 tracking-wider shadow-[0_0_15px_rgba(6,182,212,0.15)] uppercase backdrop-blur-sm">
+                        <span class="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <span class="lang-it">Disponibile per nuove sfide</span><span class="lang-en">Available for new challenges</span>
+                    </div>
+                    <h1 class="hero-elem opacity-0 translate-y-10 text-[2.5rem] sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold mb-4 tracking-tight leading-[1.15] md:leading-[1.1]">
+                        <span class="lang-it">Ingegneria Informatica</span><span class="lang-en">Computer Engineering</span> <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">& System Admin</span> <br />
+                    </h1>
+                    <h2 class="hero-elem opacity-0 translate-y-10 text-xl md:text-3xl font-mono text-cyan-400 mb-6 h-8 md:h-10">
+                        > <span id="typed-text" class="typing-cursor"></span>
+                    </h2>
+                    <p class="hero-elem opacity-0 translate-y-10 text-base md:text-lg text-slate-400 mb-8 md:mb-10 max-w-xl leading-relaxed font-light">
+                        <span class="lang-it">Appassionato di problem-solving e apprendimento rapido. Fortemente motivato a crescere professionalmente e contribuire alla gestione e sicurezza dei sistemi informativi aziendali.</span>
+                        <span class="lang-en">Passionate about problem-solving and rapid learning. Highly motivated to grow professionally and contribute to the management and security of corporate information systems.</span>
+                    </p>
+                    <div class="hero-elem opacity-0 translate-y-10 flex flex-wrap gap-3 md:gap-4">
+                        <a href="#projects" class="w-full sm:w-auto px-6 md:px-8 py-3.5 md:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white keep-white font-bold rounded-xl hover:from-blue-500 hover:to-cyan-400 transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] md:hover:shadow-[0_0_40px_rgba(6,182,212,0.6)] md:hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <span class="lang-it">Vedi i miei progetti</span><span class="lang-en">See my projects</span> <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/waleedanwar06" target="_blank" class="w-full sm:w-auto px-6 md:px-8 py-3.5 md:py-4 border border-slate-700 bg-slate-800/50 text-white font-bold rounded-xl md:hover:bg-[#0A66C2] md:hover:border-[#0A66C2] transition-all md:hover:-translate-y-1 flex items-center justify-center gap-3 glass-card">
+                            <i class="fa-brands fa-linkedin text-xl"></i> <span class="lang-it">Connettiamoci</span><span class="lang-en">Let's connect</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-elem opacity-0 translate-y-10 hidden md:flex justify-end relative perspective-1000">
+                    <div class="w-full max-w-[400px] lg:max-w-[500px] aspect-square relative flex items-center justify-center float-anim">
+                        <div class="absolute inset-0 rounded-full border border-slate-700/30 animate-[spin_30s_linear_infinite]"></div>
+                        <div class="absolute inset-8 rounded-full border border-cyan-500/20 border-dashed animate-[spin_20s_linear_infinite_reverse]"></div>
+                        
+                        <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-full border border-cyan-500/30 bg-gradient-to-br from-blue-600/10 to-cyan-600/20 flex items-center justify-center backdrop-blur-md shadow-[0_0_50px_rgba(6,182,212,0.2)] float-anim-delayed relative z-10 transition-transform duration-500 md:hover:scale-110">
+                            <i class="fa-solid fa-server text-6xl lg:text-7xl text-cyan-400 drop-shadow-[0_0_25px_rgba(6,182,212,0.8)]"></i>
+                        </div>
+                        
+                        <div class="absolute top-10 right-10 lg:right-16 glass-card p-3 lg:p-4 rounded-2xl shadow-xl float-anim z-20 md:hover:scale-125 md:hover:border-emerald-400 transition-all cursor-default">
+                            <i class="fa-solid fa-shield-halved text-emerald-400 text-2xl lg:text-3xl"></i>
+                        </div>
+                        <div class="absolute bottom-16 left-8 lg:left-12 glass-card p-3 lg:p-4 rounded-2xl shadow-xl float-anim-delayed z-20 md:hover:scale-125 md:hover:border-blue-400 transition-all cursor-default">
+                            <i class="fa-solid fa-database text-blue-400 text-2xl lg:text-3xl"></i>
+                        </div>
+                        <div class="absolute top-1/2 -right-4 lg:-right-6 glass-card p-3 lg:p-4 rounded-2xl shadow-xl float-anim z-20 md:hover:scale-125 md:hover:border-[#ff9900] transition-all cursor-default">
+                            <i class="fa-solid fa-cloud text-[#ff9900] text-2xl lg:text-3xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="profile" class="py-16 md:py-24 relative z-10">
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-10 md:mb-16">
+                    <div class="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/10 text-cyan-400 mb-4 md:mb-6 section-title opacity-0 translate-y-10 border border-cyan-500/30 shadow-[0_0_20px_rgba(6,182,212,0.2)]">
+                        <i class="fa-solid fa-user-astronaut text-xl md:text-2xl"></i>
+                    </div>
+                    <h2 class="section-title opacity-0 translate-y-10 text-cyan-500 font-mono tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-3"># About_Me</h2>
+                    <h3 class="section-title opacity-0 translate-y-10 text-2xl sm:text-3xl md:text-5xl font-extrabold text-white">
+                        <span class="lang-it">Profilo Professionale</span><span class="lang-en">Professional Profile</span>
+                    </h3>
+                </div>
+                
+                <div class="glass-card rounded-[2rem] md:rounded-[2.5rem] p-6 sm:p-8 md:p-14 text-left relative overflow-hidden group tilt-card" id="profile-card">
+                    <div class="absolute left-0 top-0 w-1.5 h-full bg-gradient-to-b from-blue-500 via-cyan-400 to-emerald-500"></div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] md:group-hover:bg-cyan-400/20 transition-colors duration-700 pointer-events-none"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 md:gap-12 relative z-10">
+                        <div class="space-y-3 md:space-y-4 group/item transition-transform duration-300 md:hover:-translate-y-2">
+                            <h4 class="section-content opacity-0 translate-y-10 text-xl md:text-2xl font-bold text-white flex items-center gap-3 md:gap-4">
+                                <i class="fa-solid fa-terminal text-blue-400 bg-blue-500/10 p-2.5 md:p-3 rounded-xl border border-blue-500/20 md:group-hover/item:scale-110 md:group-hover/item:bg-blue-500 md:group-hover/item:text-white transition-all"></i> Background
+                            </h4>
+                            <p class="section-content opacity-0 translate-y-10 text-slate-300 leading-relaxed text-base md:text-lg font-light">
+                                <span class="lang-it">Sono uno studente di <strong class="text-white font-semibold">Ingegneria Informatica</strong> al Politecnico di Milano, con un diploma in Sistemi Informativi Aziendali (SIA). Attualmente sto arricchendo il mio percorso con una specializzazione come <strong class="text-cyan-400 font-semibold">System Administrator</strong> presso Galdus.</span>
+                                <span class="lang-en">I am a <strong class="text-white font-semibold">Computer Engineering</strong> student at Politecnico di Milano, with a diploma in Corporate Information Systems (SIA). I am currently enriching my path with a specialization as a <strong class="text-cyan-400 font-semibold">System Administrator</strong> at Galdus.</span>
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-3 md:space-y-4 group/item transition-transform duration-300 md:hover:-translate-y-2">
+                            <h4 class="section-content opacity-0 translate-y-10 text-xl md:text-2xl font-bold text-white flex items-center gap-3 md:gap-4">
+                                <i class="fa-solid fa-bolt text-emerald-400 bg-emerald-500/10 p-2.5 md:p-3 rounded-xl border border-emerald-500/20 md:group-hover/item:scale-110 md:group-hover/item:bg-emerald-500 md:group-hover/item:text-white transition-all"></i> <span class="lang-it">Competenze & Approccio</span><span class="lang-en">Skills & Approach</span>
+                            </h4>
+                            <p class="section-content opacity-0 translate-y-10 text-slate-300 leading-relaxed text-base md:text-lg font-light">
+                                <span class="lang-it">Possiedo solide basi nei fondamenti di reti, sicurezza informatica e gestione di database. Caratterizzato da una spiccata attitudine al <strong class="text-emerald-400 font-semibold">problem-solving, al troubleshooting e all'apprendimento rapido</strong>, sono fortemente motivato a contribuire alla sicurezza dei sistemi informativi aziendali.</span>
+                                <span class="lang-en">I have solid foundations in networking, cybersecurity, and database management. Characterized by a strong aptitude for <strong class="text-emerald-400 font-semibold">problem-solving, troubleshooting, and rapid learning</strong>, I am highly motivated to contribute to the security of corporate information systems.</span>
+                            </p>
+                        </div>
+                        <div class="space-y-3 md:space-y-4 group/item transition-transform duration-300 md:hover:-translate-y-2">
+                            <h4 class="section-content opacity-0 translate-y-10 text-xl md:text-2xl font-bold text-white flex items-center gap-3 md:gap-4">
+                                <i class="fa-solid fa-rocket text-[#ff9900] bg-[#ff9900]/10 p-2.5 md:p-3 rounded-xl border border-[#ff9900]/20 md:group-hover/item:scale-110 md:group-hover/item:bg-[#ff9900] md:group-hover/item:text-white transition-all"></i> <span class="lang-it">Obiettivi Attuali</span><span class="lang-en">Current Goals</span>
+                            </h4>
+                            <p class="section-content opacity-0 translate-y-10 text-slate-300 leading-relaxed text-base md:text-lg font-light">
+                                <span class="lang-it">Parallelamente alla certificazione <strong class="text-[#ff9900] font-semibold"><i class="fa-brands fa-aws mr-1"></i>AWS Cloud Practitioner</strong> in corso, <strong>sto cercando attivamente un'opportunità di stage</strong> per completare il mio percorso di specializzazione presso Galdus e mettere in pratica le competenze acquisite.</span>
+                                <span class="lang-en">Alongside the ongoing <strong class="text-[#ff9900] font-semibold"><i class="fa-brands fa-aws mr-1"></i>AWS Cloud Practitioner</strong> certification, I am <strong>actively seeking an internship opportunity</strong> to complete my specialization path at Galdus and put the acquired skills into practice.</span>
+                            </p>
+                        </div>
+                        
+                        <div class="space-y-3 md:space-y-4 group/item transition-transform duration-300 md:hover:-translate-y-2">
+                            <h4 class="section-content opacity-0 translate-y-10 text-xl md:text-2xl font-bold text-white flex items-center gap-3 md:gap-4">
+                                <i class="fa-solid fa-compass text-purple-400 bg-purple-500/10 p-2.5 md:p-3 rounded-xl border border-purple-500/20 md:group-hover/item:scale-110 md:group-hover/item:bg-purple-500 md:group-hover/item:text-white transition-all"></i> <span class="lang-it">Visione & Futuro</span><span class="lang-en">Vision & Future</span>
+                            </h4>
+                            <p class="section-content opacity-0 translate-y-10 text-slate-300 leading-relaxed text-base md:text-lg font-light">
+                                <span class="lang-it">Il mio obiettivo è evolvere verso ambiti come <strong class="text-purple-400 font-semibold">Cloud, DevOps e Cybersecurity</strong>. Aspiro a diventare un professionista tecnico completo, capace di progettare, gestire e proteggere infrastrutture informatiche moderne e resilienti.</span>
+                                <span class="lang-en">My goal is to evolve towards areas such as <strong class="text-purple-400 font-semibold">Cloud, DevOps, and Cybersecurity</strong>. I aspire to become a complete technical professional, capable of designing, managing, and protecting modern and resilient IT infrastructures.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-content opacity-0 translate-y-10 mt-8 md:mt-12 flex flex-wrap justify-center gap-3 md:gap-4">
+                    <span class="px-5 py-2.5 md:px-6 md:py-3 glass-card rounded-xl text-xs md:text-sm font-bold shadow-lg flex items-center md:hover:border-cyan-500 md:hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] md:hover:-translate-y-1 transition-all cursor-default"><i class="fa-solid fa-language text-cyan-400 mr-2 text-base md:text-lg"></i> <span class="lang-it">Italiano</span><span class="lang-en">Italian</span> <span class="text-slate-400 ml-2 font-medium"><span class="lang-it">Fluente</span><span class="lang-en">Fluent</span></span></span>
+                    <span class="px-5 py-2.5 md:px-6 md:py-3 glass-card rounded-xl text-xs md:text-sm font-bold shadow-lg flex items-center md:hover:border-cyan-500 md:hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] md:hover:-translate-y-1 transition-all cursor-default"><i class="fa-solid fa-language text-cyan-400 mr-2 text-base md:text-lg"></i> <span class="lang-it">Inglese</span><span class="lang-en">English</span> <span class="text-slate-400 ml-2 font-medium">B2</span></span>
+                    <span class="px-5 py-2.5 md:px-6 md:py-3 glass-card rounded-xl text-xs md:text-sm font-bold shadow-lg flex items-center md:hover:border-cyan-500 md:hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] md:hover:-translate-y-1 transition-all cursor-default"><i class="fa-solid fa-language text-cyan-400 mr-2 text-base md:text-lg"></i> Urdu <span class="text-slate-400 ml-2 font-medium"><span class="lang-it">Madrelingua</span><span class="lang-en">Native</span></span></span>
+                    <span class="px-5 py-2.5 md:px-6 md:py-3 glass-card rounded-xl text-xs md:text-sm font-bold shadow-lg flex items-center md:hover:border-cyan-500 md:hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] md:hover:-translate-y-1 transition-all cursor-default"><i class="fa-solid fa-language text-cyan-400 mr-2 text-base md:text-lg"></i> <span class="lang-it">Francese</span><span class="lang-en">French</span> <span class="text-slate-400 ml-2 font-medium"><span class="lang-it">Base</span><span class="lang-en">Basic</span></span></span>
+                </div>
+            </div>
+        </section>
+        <!-- Truncated Skills to avoid token limits, copying only structure -->
+        <section id="skills" class="py-16 md:py-24 relative z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-10 md:mb-16">
+                    <h2 class="text-cyan-500 font-mono tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-3"># Hard_Skills</h2>
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white"><span class="lang-it">Competenze Tecniche</span><span class="lang-en">Technical Skills</span></h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+                    <div class="skill-col opacity-0 -translate-x-10 glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group md:hover:border-cyan-500/50 tilt-card card-hover-3d">
+                        <div class="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-500/10 border border-blue-500/30 rounded-2xl text-blue-400 flex items-center justify-center text-2xl md:text-3xl md:group-hover:scale-110 md:group-hover:bg-blue-500 md:group-hover:text-white md:group-hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] transition-all duration-300">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h4 class="text-xl md:text-3xl font-bold text-white"><span class="lang-it">Sviluppo & Logica</span><span class="lang-en">Development & Logic</span></h4>
+                        </div>
+                        <div class="space-y-6 md:space-y-8">
+                            <div class="group/skill">
+                                <div class="flex justify-between text-sm md:text-base mb-2 md:mb-3 font-bold text-slate-200">
+                                    <span>C++</span><span class="text-cyan-400 font-mono skill-percent" data-target="80">0%</span>
+                                </div>
+                                <div class="h-2.5 md:h-3 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner border border-slate-700/50">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" data-width="80%"></div>
+                                </div>
+                            </div>
+                            <div class="group/skill">
+                                <div class="flex justify-between text-sm md:text-base mb-2 md:mb-3 font-bold text-slate-200">
+                                    <span>Visual Basic (VB)</span><span class="text-cyan-400 font-mono skill-percent" data-target="85">0%</span>
+                                </div>
+                                <div class="h-2.5 md:h-3 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner border border-slate-700/50">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="group/skill">
+                                <div class="flex justify-between text-sm md:text-base mb-2 md:mb-3 font-bold text-slate-200">
+                                    <span>HTML & CSS</span><span class="text-cyan-400 font-mono skill-percent" data-target="70">0%</span>
+                                </div>
+                                <div class="h-2.5 md:h-3 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner border border-slate-700/50">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" data-width="70%"></div>
+                                </div>
+                            </div>
+                            <div class="group/skill">
+                                <div class="flex justify-between text-sm md:text-base mb-2 md:mb-3 font-bold text-slate-200">
+                                    <span class="flex items-center flex-wrap gap-2">Python</span>
+                                    <span class="text-cyan-400 font-mono skill-percent" data-target="30">0%</span>
+                                </div>
+                                <div class="h-2.5 md:h-3 w-full bg-slate-800 rounded-full overflow-hidden shadow-inner border border-slate-700/50">
+                                    <div class="skill-progress h-full bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.5)]" data-width="30%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-col opacity-0 translate-x-10 glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] group md:hover:border-emerald-500/50 tilt-card card-hover-3d">
+                        <div class="flex items-center gap-4 md:gap-6 mb-8 md:mb-12">
+                            <div class="w-12 h-12 md:w-16 md:h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-emerald-400 flex items-center justify-center text-2xl md:text-3xl md:group-hover:scale-110 md:group-hover:bg-emerald-500 md:group-hover:text-white md:group-hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] transition-all duration-300">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <h4 class="text-xl md:text-3xl font-bold text-white"><span class="lang-it">Sistemi & Infrastruttura</span><span class="lang-en">Systems & Infrastructure</span></h4>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                            <div class="p-5 md:p-6 border border-slate-700/50 bg-slate-800/40 rounded-2xl transition-all flex flex-col gap-3 md:gap-4 group/box md:hover:border-emerald-400 md:hover:bg-slate-800/90 md:hover:-translate-y-2 md:hover:shadow-[0_10px_20px_rgba(16,185,129,0.15)]">
+                                <i class="fa-solid fa-database text-emerald-400 text-2xl md:text-3xl md:group-hover/box:scale-110 transition-transform"></i>
+                                <div>
+                                    <h5 class="font-bold text-white text-base md:text-lg">Microsoft SQL Server</h5>
+                                    <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">Basi di progettazione e gestione database.</p>
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6 border border-slate-700/50 bg-slate-800/40 rounded-2xl transition-all flex flex-col gap-3 md:gap-4 group/box md:hover:border-[#ff9900] md:hover:bg-slate-800/90 md:hover:-translate-y-2 md:hover:shadow-[0_10px_20px_rgba(255,153,0,0.15)]">
+                                <i class="fa-brands fa-aws text-[#ff9900] text-2xl md:text-3xl md:group-hover/box:scale-110 transition-transform"></i>
+                                <div>
+                                    <h5 class="font-bold text-white text-base md:text-lg">AWS Cloud</h5>
+                                    <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">Certificazione Cloud Practitioner in corso.</p>
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6 border border-slate-700/50 bg-slate-800/40 rounded-2xl transition-all flex flex-col gap-3 md:gap-4 group/box md:hover:border-cyan-400 md:hover:bg-slate-800/90 md:hover:-translate-y-2 md:hover:shadow-[0_10px_20px_rgba(6,182,212,0.15)]">
+                                <i class="fa-solid fa-network-wired text-cyan-400 text-2xl md:text-3xl md:group-hover/box:scale-110 transition-transform"></i>
+                                <div>
+                                    <h5 class="font-bold text-white text-base md:text-lg">Reti & Sicurezza</h5>
+                                    <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">Basi solide di networking.</p>
+                                </div>
+                            </div>
+                            <div class="p-5 md:p-6 border border-slate-700/50 bg-slate-800/40 rounded-2xl transition-all flex flex-col gap-3 md:gap-4 group/box md:hover:border-purple-400 md:hover:bg-slate-800/90 md:hover:-translate-y-2 md:hover:shadow-[0_10px_20px_rgba(168,85,247,0.15)]">
+                                <i class="fa-brands fa-microsoft text-purple-400 text-2xl md:text-3xl md:group-hover/box:scale-110 transition-transform"></i>
+                                <div>
+                                    <h5 class="font-bold text-white text-base md:text-lg">Suite Office</h5>
+                                    <p class="text-xs md:text-sm text-slate-400 mt-1 md:mt-2">Competenza avanzata in Excel, Word e PPT.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="experience" class="py-16 md:py-24 relative z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10 md:mb-16">
+                    <h2 class="text-cyan-500 font-mono tracking-widest uppercase text-xs md:text-sm mb-2 md:mb-3"># <span class="lang-it">Carriera</span><span class="lang-en">Career</span></h2>
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white"><span class="lang-it">Esperienza Professionale</span><span class="lang-en">Professional Experience</span></h3>
+                </div>
+                <div class="glass-card p-6 md:p-12 rounded-[2rem] md:rounded-[2.5rem] exp-item opacity-0 translate-y-10 border-l-[4px] md:border-l-[6px] border-l-cyan-500 relative overflow-hidden group md:hover:-translate-y-2 md:hover:shadow-[0_25px_50px_rgba(6,182,212,0.2)] transition-all duration-500">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-cyan-600/10 rounded-full blur-[60px] md:group-hover:bg-cyan-500/25 transition-colors duration-500 pointer-events-none"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex flex-col md:flex-row justify-between md:items-center mb-6 md:mb-8 gap-4 border-b border-slate-700/50 pb-5 md:pb-6">
+                            <div>
+                                <h4 class="text-xl md:text-3xl font-bold text-white mb-2"><span class="lang-it">Stage Amministrativo e IT</span><span class="lang-en">Administrative and IT Internship</span></h4>
+                                <h5 class="text-lg md:text-xl text-cyan-400 font-bold flex items-center md:group-hover:text-cyan-300 transition-colors"><i class="fa-regular fa-building mr-2 md:mr-3"></i> Italdibipack S.P.A</h5>
+                            </div>
+                            <span class="inline-flex self-start md:self-auto items-center px-4 md:px-5 py-2 md:py-2.5 bg-slate-800/90 border border-slate-600 text-slate-200 text-xs md:text-sm font-bold rounded-xl whitespace-nowrap shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                                <i class="fa-regular fa-calendar mr-2 text-cyan-400"></i> <span class="lang-it">Ott 2023 - Nov 2023</span><span class="lang-en">Oct 2023 - Nov 2023</span>
+                            </span>
+                        </div>
+                        
+                        <ul class="space-y-3 md:space-y-4">
+                            <li class="flex items-start text-slate-300 font-light text-base md:text-lg group/li transition-colors md:hover:text-white">
+                                <div class="min-w-[20px] md:min-w-[24px] mt-1 mr-3 md:mr-4"><i class="fa-solid fa-angle-right text-cyan-500 text-lg md:text-xl md:group-hover/li:translate-x-2 transition-transform duration-300"></i></div>
+                                <span><span class="lang-it">Supporto operativo alle attività amministrative e contabili.</span><span class="lang-en">Operational support for administrative and accounting activities.</span></span>
+                            </li>
+                            <li class="flex items-start text-slate-300 font-light text-base md:text-lg group/li transition-colors md:hover:text-white">
+                                <div class="min-w-[20px] md:min-w-[24px] mt-1 mr-3 md:mr-4"><i class="fa-solid fa-angle-right text-cyan-500 text-lg md:text-xl md:group-hover/li:translate-x-2 transition-transform duration-300"></i></div>
+                                <span><span class="lang-it">Gestione di estratti conto bancari, fatture e documenti di trasporto.</span><span class="lang-en">Management of bank statements, invoices, and transport documents.</span></span>
+                            </li>
+                            <li class="flex items-start text-slate-300 font-light text-base md:text-lg group/li transition-colors md:hover:text-white">
+                                <div class="min-w-[20px] md:min-w-[24px] mt-1 mr-3 md:mr-4"><i class="fa-solid fa-angle-right text-cyan-500 text-lg md:text-xl md:group-hover/li:translate-x-2 transition-transform duration-300"></i></div>
+                                <span><span class="lang-it">Utilizzo della <strong class="text-cyan-200 font-medium">piattaforma dell'Agenzia delle Dogane</strong>.</span><span class="lang-en">Usage of the <strong class="text-cyan-200 font-medium">Customs Agency platform</strong>.</span></span>
+                            </li>
+                            <li class="flex items-start text-slate-300 font-light text-base md:text-lg group/li transition-colors md:hover:text-white">
+                                <div class="min-w-[20px] md:min-w-[24px] mt-1 mr-3 md:mr-4"><i class="fa-solid fa-angle-right text-cyan-500 text-lg md:text-xl md:group-hover/li:translate-x-2 transition-transform duration-300"></i></div>
+                                <span><span class="lang-it">Operatività su sistemi aziendali tramite il gestionale <strong class="text-cyan-200 font-medium">AS400</strong>, consolidando attenzione ai dettagli.</span><span class="lang-en">Operations on corporate systems via <strong class="text-cyan-200 font-medium">AS400</strong> software, strengthening attention to detail.</span></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="py-16 md:py-24 relative z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
+            <div class="max-w-5xl mx-auto px-4">
+                <div class="text-center mb-10 md:mb-16">
+                    <h2 class="text-cyan-500 font-mono tracking-widest uppercase text-xs md:text-sm mb-2"># <span class="lang-it">Studi</span><span class="lang-en">Studies</span></h2>
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white"><span class="lang-it">Formazione Accademica</span><span class="lang-en">Academic Education</span></h3>
+                </div>
+                <div class="space-y-8 md:space-y-12 relative before:absolute before:inset-0 before:ml-5 md:before:mx-auto before:-translate-x-px md:before:translate-x-0 before:h-full before:w-[3px] before:bg-gradient-to-b before:from-blue-500 before:via-cyan-400 before:to-transparent before:rounded-full">
+                    
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group edu-item opacity-0">
+                        <div class="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full border-4 border-[var(--bg-dark)] bg-blue-500 text-white keep-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 shadow-[0_0_20px_rgba(59,130,246,0.8)] md:group-hover:scale-125 md:group-hover:bg-cyan-400 transition-all duration-500 relative">
+                            <i class="fa-solid fa-graduation-cap text-sm md:text-xl relative z-10"></i>
+                        </div>
+                        <div class="w-[calc(100%-3.5rem)] md:w-[calc(50%-4rem)] glass-card p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem]">
+                            <span class="inline-block px-3 py-1 bg-blue-500/15 border border-blue-500/40 text-blue-400 text-xs font-mono font-bold rounded-lg mb-3">2025 - 2028</span>
+                            <h4 class="font-bold text-xl text-white mb-1"><span class="lang-it">Ingegneria Informatica</span><span class="lang-en">Computer Engineering</span></h4>
+                            <h5 class="text-slate-400 text-sm flex items-center"><i class="fa-solid fa-building-columns mr-2"></i> Politecnico di Milano</h5>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group edu-item opacity-0">
+                        <div class="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full border-4 border-[var(--bg-dark)] bg-cyan-500 text-white keep-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fa-solid fa-server text-sm md:text-xl"></i>
+                        </div>
+                        <div class="w-[calc(100%-3.5rem)] md:w-[calc(50%-4rem)] glass-card p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem]">
+                            <span class="inline-block px-3 py-1 bg-cyan-500/15 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-bold rounded-lg mb-3">2025 - 2026</span>
+                            <h4 class="font-bold text-xl text-white mb-1">System Administrator</h4>
+                            <h5 class="text-slate-400 text-sm flex items-center"><i class="fa-solid fa-laptop-code mr-2"></i> Galdus Formazione</h5>
+                        </div>
+                    </div>
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group edu-item opacity-0">
+                        <div class="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full border-4 border-[var(--bg-dark)] bg-slate-600 text-white keep-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 md:group-hover:scale-125 md:group-hover:bg-slate-400 transition-all duration-500">
+                            <i class="fa-solid fa-school text-sm md:text-xl"></i>
+                        </div>
+                        <div class="w-[calc(100%-3.5rem)] md:w-[calc(50%-4rem)] glass-card p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem]">
+                            <span class="inline-block px-3 py-1 bg-slate-800 border border-slate-600 text-slate-300 text-xs font-mono font-bold rounded-lg mb-3">2020 - 2025</span>
+                            <h4 class="font-bold text-xl text-white mb-1"><span class="lang-it">Diploma SIA</span><span class="lang-en">SIA Diploma</span></h4>
+                            <h5 class="text-slate-400 text-sm flex items-center mb-3"><i class="fa-solid fa-book mr-2"></i> ITET Maggiolini</h5>
+                            <p class="text-slate-400 font-light leading-relaxed text-xs">
+                                <span class="lang-it">Studio approfondito di economia aziendale, sistemi informativi, linguaggi di programmazione (VB), gestione database (MS SQL), reti e sicurezza informatica.</span>
+                                <span class="lang-en">In-depth study of business economics, information systems, programming languages (VB), database management (MS SQL), networking, and cybersecurity.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="py-16 md:py-24 relative z-10">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-10 md:mb-16">
+                    <h2 class="text-cyan-500 font-mono tracking-widest uppercase text-xs md:text-sm mb-2"># Portfolio</h2>
+                    <h3 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white"><span class="lang-it">Progetti Web e DB</span><span class="lang-en">Web and DB Projects</span></h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
+                    <div class="glass-card rounded-[2rem] md:rounded-[2.5rem] overflow-hidden proj-item opacity-0 translate-y-10 group cursor-pointer flex flex-col h-full md:hover:shadow-[0_25px_50px_rgba(59,130,246,0.2)] transition-all duration-500 md:hover:-translate-y-3 tilt-card">
+                        <div class="h-1.5 md:h-2 w-full bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                        <div class="p-6 md:p-10 flex-1 flex flex-col relative overflow-hidden bg-gradient-to-br from-transparent to-blue-900/10">
+                            <i class="fa-solid fa-cart-shopping absolute right-[-10px] md:right-[-20px] bottom-[-10px] md:bottom-[-20px] text-8xl md:text-9xl text-slate-800/20 md:group-hover:text-blue-500/15 transition-all duration-700 rotate-[-10deg] md:group-hover:scale-125"></i>
+                            <div class="flex justify-between items-start mb-6 md:mb-8 relative z-10">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-xl md:rounded-2xl flex items-center justify-center text-2xl md:text-3xl md:group-hover:bg-blue-500 md:group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </div>
+                                <span class="px-3 py-1 md:px-4 md:py-1.5 bg-slate-900/90 border border-slate-700 rounded-full text-[10px] md:text-xs font-mono font-bold text-slate-300 shadow-lg backdrop-blur-md">Web Project</span>
+                            </div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white relative z-10 md:group-hover:text-cyan-400 transition-colors"><span class="lang-it">Sito E-commerce</span><span class="lang-en">E-commerce Website</span></h4>
+                            <p class="text-slate-300 mb-6 md:mb-8 font-light leading-relaxed flex-1 relative z-10 text-sm md:text-lg">
+                                <span class="lang-it">Sviluppo di un ambiente web funzionale e dinamico. Il progetto ha previsto la connessione tra interfaccia utente e database per la gestione dei dati, realizzato in HTML, CSS e Visual Basic tramite Visual Studio, integrato con <strong class="text-cyan-200 font-medium">Microsoft SQL Server 2018</strong>.</span>
+                                <span class="lang-en">Development of a functional and dynamic web environment. The project involved connecting the user interface and database for data management, created in HTML, CSS, and Visual Basic via Visual Studio, integrated with <strong class="text-cyan-200 font-medium">Microsoft SQL Server 2018</strong>.</span>
+                            </p>
+                            <div class="flex flex-wrap gap-2 relative z-10 mt-auto">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-blue-300 shadow-sm">HTML/CSS</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-cyan-300 shadow-sm">Visual Basic</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-emerald-300 shadow-sm">MS SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-[2rem] md:rounded-[2.5rem] overflow-hidden proj-item opacity-0 translate-y-10 group cursor-pointer flex flex-col h-full md:hover:shadow-[0_25px_50px_rgba(16,185,129,0.2)] transition-all duration-500 md:hover:-translate-y-3 tilt-card">
+                        <div class="h-1.5 md:h-2 w-full bg-gradient-to-r from-emerald-500 to-cyan-400"></div>
+                        <div class="p-6 md:p-10 flex-1 flex flex-col relative overflow-hidden bg-gradient-to-br from-transparent to-emerald-900/10">
+                            <i class="fa-solid fa-table-tennis-paddle-ball absolute right-[-10px] md:right-[-20px] bottom-[-10px] md:bottom-[-20px] text-8xl md:text-9xl text-slate-800/20 md:group-hover:text-emerald-500/15 transition-all duration-700 rotate-[-10deg] md:group-hover:scale-125"></i>
+                            <div class="flex justify-between items-start mb-6 md:mb-8 relative z-10">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 rounded-xl md:rounded-2xl flex items-center justify-center text-2xl md:text-3xl md:group-hover:bg-emerald-500 md:group-hover:text-white transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                                    <i class="fa-solid fa-table-tennis-paddle-ball"></i>
+                                </div>
+                                <span class="px-3 py-1 md:px-4 md:py-1.5 bg-slate-900/90 border border-slate-700 rounded-full text-[10px] md:text-xs font-mono font-bold text-slate-300 shadow-lg backdrop-blur-md">Web Project</span>
+                            </div>
+                            <h4 class="text-2xl md:text-3xl font-bold mb-3 md:mb-4 text-white relative z-10 md:group-hover:text-emerald-400 transition-colors"><span class="lang-it">Sito dedicato al Tennis</span><span class="lang-en">Tennis Website</span></h4>
+                            <p class="text-slate-300 mb-6 md:mb-8 font-light leading-relaxed flex-1 relative z-10 text-sm md:text-lg">
+                                <span class="lang-it">Progettazione di una piattaforma web integrata. Realizzata in Visual Studio combinando UI front-end in HTML/CSS e logica di gestione in Visual Basic, interfacciata direttamente con <strong class="text-emerald-200 font-medium">Microsoft SQL Server 2018</strong> per l'archiviazione dati.</span>
+                                <span class="lang-en">Design of an integrated web platform. Created in Visual Studio combining HTML/CSS front-end UI and management logic in Visual Basic, interfaced directly with <strong class="text-emerald-200 font-medium">Microsoft SQL Server 2018</strong> for data storage.</span>
+                            </p>
+                            <div class="flex flex-wrap gap-2 relative z-10 mt-auto">
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-emerald-300 shadow-sm">HTML/CSS</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-cyan-300 shadow-sm">Visual Basic</span>
+                                <span class="px-2.5 py-1 md:px-3 md:py-1.5 bg-slate-800/90 border border-slate-600 rounded-lg text-[10px] md:text-xs font-mono font-semibold text-green-300 shadow-sm">MS SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-[#03050a] border-t border-slate-800/80 py-16 md:py-24 relative overflow-hidden z-10">
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[30rem] md:w-[50rem] h-[15rem] md:h-[25rem] bg-cyan-600/15 blur-[100px] md:blur-[120px] pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 md:mb-6 text-white tracking-tight">
+                    <span class="lang-it">Pronto per il prossimo passo?</span><span class="lang-en">Ready for the next step?</span>
+                </h3>
+                <p class="text-slate-400 mb-8 md:mb-12 font-light text-base md:text-xl max-w-2xl mx-auto">
+                    <span class="lang-it">Sempre aperto a discutere di infrastrutture IT, cloud, sviluppo o nuove opportunità.</span>
+                    <span class="lang-en">Always open to discussing IT infrastructure, cloud, development, or new opportunities.</span>
+                </p>
+                
+                <div class="flex justify-center gap-4 md:gap-6 mb-12 md:mb-16">
+                    <a href="mailto:Waleedanwar039@gmail.com" class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-card flex items-center justify-center text-xl md:text-2xl text-slate-300 md:hover:bg-cyan-500 md:hover:border-cyan-400 md:hover:text-white transition-all duration-300 md:hover:-translate-y-2 shadow-xl md:hover:shadow-[0_15px_30px_rgba(6,182,212,0.4)]">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/waleedanwar06" target="_blank" class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-card flex items-center justify-center text-xl md:text-2xl text-slate-300 md:hover:bg-[#0A66C2] md:hover:border-[#0A66C2] md:hover:text-white transition-all duration-300 md:hover:-translate-y-2 shadow-xl md:hover:shadow-[0_15px_30px_rgba(10,102,194,0.4)]">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" class="w-14 h-14 md:w-16 md:h-16 rounded-2xl glass-card flex items-center justify-center text-xl md:text-2xl text-slate-300 md:hover:bg-white md:hover:border-white md:hover:text-slate-900 transition-all duration-300 md:hover:-translate-y-2 shadow-xl md:hover:shadow-[0_15px_30px_rgba(255,255,255,0.2)]">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+                <div class="inline-flex flex-col sm:flex-row items-center gap-4 md:gap-6 text-slate-300 text-xs md:text-sm font-mono bg-slate-900/80 p-5 md:p-6 rounded-2xl border border-slate-700 shadow-2xl mb-12 md:mb-16 backdrop-blur-md md:hover:border-cyan-500/50 transition-colors w-full sm:w-auto">
+                    <span class="flex items-center hover:text-cyan-400 transition-colors cursor-pointer"><i class="fa-solid fa-phone mr-2 md:mr-3 text-cyan-500 text-lg md:text-xl"></i> +39 351 106 3920</span>
+                    <span class="hidden sm:block w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                    <span class="flex items-center hover:text-cyan-400 transition-colors cursor-pointer"><i class="fa-solid fa-location-dot mr-2 md:mr-3 text-cyan-500 text-lg md:text-xl"></i> Nerviano 20014, Milano</span>
+                </div>
+                
+                <p class="text-slate-500 text-xs md:text-sm font-medium tracking-wide">
+                    &copy; 2026 Waleed Anwar. <span class="lang-it">Tutti i diritti riservati.</span><span class="lang-en">All rights reserved.</span> <br> 
+                    <span class="text-[10px] md:text-xs font-mono mt-2 inline-block opacity-60 text-cyan-600"><i class="fa-solid fa-circle text-[6px] md:text-[8px] mr-1 animate-pulse"></i> SYS.STATUS: ONLINE</span>
+                </p>
+            </div>
+        </footer>
+    </main> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
