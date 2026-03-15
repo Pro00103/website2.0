@@ -1,0 +1,231 @@
+
+theme-linux.html
+../../scratch/portfolio
+
+
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>waleed@portfolio:~$ cat README.md</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --green: #4ade80; --dim: #22c55e; --bg: #000; --fg: #4ade80; }
+        * { box-sizing: border-box; font-family: 'Fira Code', monospace; }
+        body { background: var(--bg); color: var(--fg); margin: 0; overflow-x: hidden; font-size: 14px; line-height: 1.7; }
+        body.light { --bg: #fafaf5; --fg: #166534; --green: #166534; --dim: #15803d; background: var(--bg); color: var(--fg); }
+        body.light .term-card { background: #fff; border-color: #166534; box-shadow: none; }
+        body.light .term-card .prompt { color: #15803d; }
+        body.light nav { background: rgba(250,250,245,0.95); border-color: #166534; }
+        body.light nav a, body.light nav button { color: #166534; }
+        body.light footer { background: #f0f0eb; border-color: #166534; }
+        body.light .cursor-blink { background: #166534; }
+        body.light .crt-overlay { display: none; }
+        body.light .comment { color: #888; }
+        body.light .string { color: #b45309; }
+        body.light .keyword { color: #1d4ed8; }
+        nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--green); display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1.5rem; font-size: 13px; }
+        .term-card { background: #0a0a0a; border: 1px solid #22c55e; padding: 1.5rem; margin-bottom: 1.5rem; position: relative; box-shadow: 0 0 10px rgba(34,197,94,0.1); transition: all 0.3s; }
+        .term-card:hover { box-shadow: 0 0 20px rgba(34,197,94,0.25); border-color: #4ade80; }
+        .term-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 28px; background: #111; border-bottom: 1px solid #22c55e; }
+        .term-card::after { content: '● ● ●'; position: absolute; top: 5px; left: 12px; font-size: 10px; letter-spacing: 4px; color: #333; }
+        body.light .term-card::before { background: #e8e8e3; }
+        .prompt { color: var(--dim); }
+        .prompt::before { content: 'waleed@portfolio:~$ '; color: #22c55e; }
+        body.light .prompt::before { color: #15803d; }
+        .cursor-blink { display: inline-block; width: 8px; height: 16px; background: var(--green); animation: cursorBlink 1s step-end infinite; vertical-align: middle; margin-left: 2px; }
+        @keyframes cursorBlink { 50% { opacity: 0; } }
+        .comment { color: #555; }
+        .string { color: #fbbf24; }
+        .keyword { color: #60a5fa; }
+        .crt-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 9998; background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px); }
+        .progress-bar { height: 12px; background: #111; border: 1px solid var(--dim); }
+        .progress-bar .fill { height: 100%; background: var(--green); position: relative; }
+        .progress-bar .fill::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0px, transparent 3px, rgba(0,0,0,0.3) 3px, rgba(0,0,0,0.3) 6px); }
+        section { position: relative; z-index: 1; }
+        a { color: var(--green); text-decoration: underline; }
+        a:hover { color: #86efac; }
+        body.light a:hover { color: #15803d; }
+    </style>
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <nav>
+        <a href="themes.html" style="text-decoration:none" class="hover:text-[#86efac] transition-colors">[← THEMES]</a>
+        <div class="flex gap-4 items-center">
+            <a href="#profile" class="hidden md:inline" style="text-decoration:none">profile</a>
+            <a href="#skills" class="hidden md:inline" style="text-decoration:none">skills</a>
+            <a href="#xp" class="hidden md:inline" style="text-decoration:none">xp</a>
+            <a href="#edu" class="hidden md:inline" style="text-decoration:none">edu</a>
+            <a href="#projects" class="hidden md:inline" style="text-decoration:none">projects</a>
+            <button onclick="document.body.classList.toggle('light')" class="ml-2 w-7 h-7 border border-[var(--green)] bg-transparent text-[var(--green)] hover:bg-[var(--green)] hover:text-black transition-all flex items-center justify-center text-xs"><i class="fa-solid fa-sun"></i></button>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center px-4 md:px-8 pt-16">
+        <div class="max-w-3xl mx-auto w-full">
+            <div class="term-card pt-10">
+                <p class="comment"># ===========================================</p>
+                <p class="comment"># Waleed Anwar - Portfolio</p>
+                <p class="comment"># ===========================================</p>
+                <br>
+                <p><span class="prompt">whoami</span></p>
+                <p class="text-lg md:text-2xl font-bold my-2" style="color:#4ade80; text-shadow: 0 0 10px rgba(74,222,128,0.5);">Waleed Anwar</p>
+                <p><span class="keyword">role</span>=<span class="string">"System Administrator & Developer"</span></p>
+                <p><span class="keyword">university</span>=<span class="string">"Politecnico di Milano"</span></p>
+                <p><span class="keyword">degree</span>=<span class="string">"Ingegneria Informatica"</span></p>
+                <br>
+                <p><span class="prompt">cat description.txt</span></p>
+                <p>Appassionato di problem-solving e apprendimento rapido.</p>
+                <p>Fortemente motivato a crescere professionalmente e</p>
+                <p>contribuire alla gestione e sicurezza dei sistemi</p>
+                <p>informativi aziendali.</p>
+                <br>
+                <p><span class="prompt">echo $STATUS</span></p>
+                <p class="string">"Disponibile per nuove sfide"</p>
+                <p><span class="cursor-blink"></span></p>
+            </div>
+        </div>
+    </section>
+    <!-- PROFILE -->
+    <section id="profile" class="py-16 px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="term-card pt-10">
+                <p><span class="prompt">cat profile.txt</span></p>
+                <br>
+                <p class="comment"># [BACKGROUND]</p>
+                <p>Sono uno studente di <span class="keyword">Ingegneria Informatica</span></p>
+                <p>al Politecnico di Milano, con un diploma in Sistemi</p>
+                <p>Informativi Aziendali (SIA). Attualmente sto arricchendo</p>
+                <p>il mio percorso con una specializzazione come</p>
+                <p><span class="string">System Administrator</span> presso Galdus.</p>
+                <br>
+                <p class="comment"># [COMPETENZE & APPROCCIO]</p>
+                <p>Possiedo solide basi nei fondamenti di reti, sicurezza</p>
+                <p>informatica e gestione di database. Spiccata attitudine</p>
+                <p>al <span class="string">problem-solving</span>, al <span class="string">troubleshooting</span></p>
+                <p>e all'<span class="string">apprendimento rapido</span>.</p>
+                <br>
+                <p class="comment"># [OBIETTIVI ATTUALI]</p>
+                <p>- Certificazione <span class="string">AWS Cloud Practitioner</span> (in corso)</p>
+                <p>- Ricerca attiva di stage per completare il percorso</p>
+                <p>  di specializzazione presso Galdus e mettere in</p>
+                <p>  pratica le competenze acquisite.</p>
+                <br>
+                <p class="comment"># [VISIONE & FUTURO]</p>
+                <p>Evolvere verso: <span class="keyword">Cloud</span> → <span class="keyword">DevOps</span> → <span class="keyword">Cybersecurity</span></p>
+                <p>Diventare un professionista tecnico completo, capace</p>
+                <p>di progettare, gestire e proteggere infrastrutture</p>
+                <p>informatiche moderne e resilienti.</p>
+                <br>
+                <p class="comment"># [LANGUAGES]</p>
+                <p>Italiano:  ████████████████ <span class="string">Fluente</span></p>
+                <p>English:   ████████████░░░░ <span class="string">B2</span></p>
+                <p>Urdu:      ████████████████ <span class="string">Madrelingua</span></p>
+                <p>Français:  ████░░░░░░░░░░░░ <span class="string">Base</span></p>
+            </div>
+        </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills" class="py-16 px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="term-card pt-10">
+                <p><span class="prompt">cat skills.conf</span></p>
+                <br>
+                <p class="comment"># Sviluppo & Logica</p>
+                <div class="space-y-3 mt-2 mb-6">
+                    <div><span class="text-xs">C++</span><div class="progress-bar mt-1"><div class="fill" style="width:80%"></div></div><span class="text-xs comment ml-1">80%</span></div>
+                    <div><span class="text-xs">Visual Basic (VB)</span><div class="progress-bar mt-1"><div class="fill" style="width:85%"></div></div><span class="text-xs comment ml-1">85%</span></div>
+                    <div><span class="text-xs">HTML & CSS</span><div class="progress-bar mt-1"><div class="fill" style="width:70%"></div></div><span class="text-xs comment ml-1">70%</span></div>
+                    <div><span class="text-xs">Python <span class="comment">(in corso)</span></span><div class="progress-bar mt-1"><div class="fill" style="width:30%"></div></div><span class="text-xs comment ml-1">30%</span></div>
+                </div>
+                <p class="comment"># Sistemi & Infrastruttura</p>
+                <p>├── <span class="keyword">MS SQL Server</span>  → Basi di progettazione e gestione database</p>
+                <p>├── <span class="string">AWS Cloud</span>      → Certificazione Cloud Practitioner in corso</p>
+                <p>├── <span class="keyword">Reti & Sicurezza</span> → Basi solide di networking e sicurezza</p>
+                <p>└── <span class="keyword">Suite Office</span>   → Competenza avanzata Excel, Word, PPT</p>
+            </div>
+        </div>
+    </section>
+    <!-- EXPERIENCE -->
+    <section id="xp" class="py-16 px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="term-card pt-10">
+                <p><span class="prompt">cat /var/log/experience.log</span></p>
+                <br>
+                <p class="string">[2023-10 → 2023-11] Italdibipack S.P.A</p>
+                <p class="comment"># Stage Amministrativo e IT</p>
+                <p>  → Supporto operativo alle attività amministrative e contabili.</p>
+                <p>  → Gestione di estratti conto bancari, fatture e documenti di trasporto.</p>
+                <p>  → Utilizzo della <span class="keyword">piattaforma dell'Agenzia delle Dogane</span>.</p>
+                <p>  → Operatività su sistemi aziendali tramite il gestionale <span class="keyword">AS400</span>,</p>
+                <p>    consolidando attenzione ai dettagli.</p>
+            </div>
+        </div>
+    </section>
+    <!-- EDUCATION -->
+    <section id="edu" class="py-16 px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="term-card pt-10">
+                <p><span class="prompt">cat /etc/education.d/*.conf</span></p>
+                <br>
+                <p class="comment"># === /etc/education.d/01-polimi.conf ===</p>
+                <p><span class="keyword">institution</span>=<span class="string">"Politecnico di Milano"</span></p>
+                <p><span class="keyword">degree</span>=<span class="string">"Ingegneria Informatica"</span></p>
+                <p><span class="keyword">period</span>=<span class="string">"2025 - 2028"</span></p>
+                <br>
+                <p class="comment"># === /etc/education.d/02-galdus.conf ===</p>
+                <p><span class="keyword">institution</span>=<span class="string">"Galdus Formazione"</span></p>
+                <p><span class="keyword">degree</span>=<span class="string">"System Administrator"</span></p>
+                <p><span class="keyword">period</span>=<span class="string">"2025 - 2026"</span></p>
+                <br>
+                <p class="comment"># === /etc/education.d/03-itet.conf ===</p>
+                <p><span class="keyword">institution</span>=<span class="string">"ITET Maggiolini"</span></p>
+                <p><span class="keyword">degree</span>=<span class="string">"Diploma SIA"</span></p>
+                <p><span class="keyword">period</span>=<span class="string">"2020 - 2025"</span></p>
+                <p class="comment"># Studio approfondito di economia aziendale, sistemi</p>
+                <p class="comment"># informativi, linguaggi di programmazione (VB),</p>
+                <p class="comment"># gestione database (MS SQL), reti e sicurezza informatica.</p>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="py-16 px-4 md:px-8">
+        <div class="max-w-3xl mx-auto">
+            <div class="term-card pt-10">
+                <p><span class="prompt">ls -la ~/projects/</span></p>
+                <br>
+                <p>drwxr-xr-x  waleed  <span class="string">ecommerce-site/</span></p>
+                <p class="comment">  # Sviluppo di un ambiente web funzionale e dinamico.</p>
+                <p class="comment">  # Connessione tra interfaccia utente e database per</p>
+                <p class="comment">  # la gestione dei dati. Realizzato in HTML, CSS e</p>
+                <p class="comment">  # Visual Basic tramite Visual Studio, integrato con</p>
+                <p class="comment">  # Microsoft SQL Server 2018.</p>
+                <p>  <span class="keyword">stack</span>=[<span class="string">"HTML/CSS"</span>, <span class="string">"Visual Basic"</span>, <span class="string">"MS SQL Server"</span>]</p>
+                <br>
+                <p>drwxr-xr-x  waleed  <span class="string">tennis-website/</span></p>
+                <p class="comment">  # Progettazione di una piattaforma web integrata.</p>
+                <p class="comment">  # Realizzata in Visual Studio combinando UI front-end</p>
+                <p class="comment">  # in HTML/CSS e logica di gestione in Visual Basic,</p>
+                <p class="comment">  # interfacciata con Microsoft SQL Server 2018 per</p>
+                <p class="comment">  # l'archiviazione dati.</p>
+                <p>  <span class="keyword">stack</span>=[<span class="string">"HTML/CSS"</span>, <span class="string">"Visual Basic"</span>, <span class="string">"MS SQL Server"</span>]</p>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="py-10 px-4 text-center border-t border-[var(--green)] relative z-10" style="background: rgba(0,0,0,0.98);">
+        <p class="comment text-xs mb-4"># Contact</p>
+        <div class="flex justify-center gap-4 mb-4">
+            <a href="mailto:Waleedanwar039@gmail.com" style="text-decoration:none" class="w-9 h-9 border border-[var(--green)] flex items-center justify-center hover:bg-[var(--green)] hover:text-black transition-all"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/waleedanwar06" target="_blank" style="text-decoration:none" class="w-9 h-9 border border-[var(--green)] flex items-center justify-center hover:bg-[var(--green)] hover:text-black transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" style="text-decoration:none" class="w-9 h-9 border border-[var(--green)] flex items-center justify-center hover:bg-[var(--green)] hover:text-black transition-all"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p class="text-xs mb-4"><span class="comment">phone=</span><span class="string">"+39 351 106 3920"</span> <span class="comment">location=</span><span class="string">"Nerviano 20014, Milano"</span></p>
+        <p class="text-[10px] comment">&copy; 2026 waleed@portfolio ~ exit 0</p>
+    </footer>
+</body>
+</html>
